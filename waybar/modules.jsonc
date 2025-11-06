@@ -1,0 +1,94 @@
+{
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        //"all-outputs": true,
+        "warp-on-scroll": false,
+        "show-special": true,
+        "specialvisible-only": true,
+        "format": "{name}"
+    },
+    "tray": {
+	"spacing": 10
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d  %H:%M:%S}",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "  {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+	"on-click-middle": "",
+	"on-scroll-up": "exec ~/Dropbox/Scripts/Linux/setVolume 1%+",
+	"on-scroll-down": "exec ~/Dropbox/Scripts/Linux/setVolume 1%-"
+
+    },
+    "custom/pacman": {
+        "class": "custom-pacman",
+        "exec": "~/Dropbox/Scripts/pacman_updates.sh",
+        "interval": 1800,
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+	"on-click": "pamac-manager"
+
+    },
+    "idle_inhibitor": {
+	"start-activated": true,
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+    	}
+    },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "backlight": {
+    	"device": "intel_backlight",
+	"format": "{percent}% {icon}",
+	"format-icons": ["", "", "", ""],
+	"on-scroll-up": "exec ~/Dropbox/Scripts/Linux/setBrightness 1%+",
+	"on-scroll-down": "exec ~/Dropbox/Scripts/Linux/setBrightness 1%-"
+    }
+}

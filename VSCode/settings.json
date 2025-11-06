@@ -1,0 +1,12 @@
+{
+    "terminal.integrated.stickyScroll.enabled": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "git.autofetch": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false,
+        "<C-f>": false
+    },
+    "explorer.confirmDelete": false,
+}

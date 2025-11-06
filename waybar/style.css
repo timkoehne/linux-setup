@@ -1,0 +1,97 @@
+* {
+    font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 -3px 6px rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: #ffffff;
+    transition: background 0.3s ease;
+    padding: 5px 5px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#workspaces button.urgent {
+    background-color: #d1d1d1;
+    color: #2c3e50;
+}
+
+#workspaces button.visible{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#clock,
+#custom-pacman,
+#keyboard-state,
+#tray,
+#battery,
+#backlight,
+#idle_inhibitor {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0px 5px;
+}
+
+#custom-pacman,
+#cpu,
+#memory,
+#keyboard-state,
+#idle_inhibitor,
+#battery,
+#network {
+    padding: 5px 10px;
+}
+
+#keyboard-state label.capslock.locked {
+    background-color: rgb(255, 0, 0);
+}
+
+#temperature.critical {
+    color: rgb(255, 0, 0);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #e74c3c;
+}
+
+
+.modules-left > widget:first-child > #workspaces {
+    margin-right: 10px; /* Space between workspaces and other modules */
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-left: 10px; /* Space between workspaces and other modules */
+}
