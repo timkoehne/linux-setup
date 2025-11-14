@@ -6,6 +6,8 @@ ln -f -s ~/Dropbox/Scripts/linux-setup/waybar ~/.config/waybar
 ln -f -s ~/Dropbox/Scripts/linux-setup/hypr/hyprland.conf ~/.config/hypr/hyprland.conf
 ln -f -s ~/Dropbox/Scripts/linux-setup/hypr/hypridle.conf ~/.config/hypr/hypridle.conf
 ln -f -s ~/Dropbox/Scripts/linux-setup/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf
+touch ~/Dropbox/Scripts/linux-setup/hypr/monitors.conf
+touch ~/Dropbox/Scripts/linux-setup/hypr/workspaces.conf
 [ -d "~/.config/Code/" ] && mkdir ~/.config/Code/
 [ -d "~/.config/Code/User/" ] && mkdir ~/.config/Code/User
 ln -f -s ~/Dropbox/Scripts/linux-setup/VSCode/settings.json ~/.config/Code/User/settings.json
