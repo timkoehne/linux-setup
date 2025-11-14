@@ -52,8 +52,8 @@
         },
         "on-click": "pavucontrol",
 	"on-click-middle": "",
-	"on-scroll-up": "exec ~/Dropbox/Scripts/Linux/setVolume 1%+",
-	"on-scroll-down": "exec ~/Dropbox/Scripts/Linux/setVolume 1%-"
+	"on-scroll-up": "exec ~/Dropbox/Scripts/linux-setup/set_volume.sh 1%+",
+	"on-scroll-down": "exec ~/Dropbox/Scripts/linux-setup/set_volume.sh 1%-"
 
     },
     "custom/pacman": {
@@ -88,7 +88,7 @@
     	"device": "intel_backlight",
 	"format": "{percent}% {icon}",
 	"format-icons": ["", "", "", ""],
-	"on-scroll-up": "exec ~/Dropbox/Scripts/Linux/setBrightness 1%+",
-	"on-scroll-down": "exec ~/Dropbox/Scripts/Linux/setBrightness 1%-"
+	"on-scroll-up": "exec ~/Dropbox/Scripts/linux-setup/set_brightness.sh 1%+",
+	"on-scroll-down": "exec ~/Dropbox/Scripts/linux-setup/set_brightness.sh 1%-"
     }
 }
