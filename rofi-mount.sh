@@ -1,16 +1,6 @@
 #!/usr/bin/env bash
 
-# Allow mounting and unmounting without password
-# in /etc/polkit-1/rules.d/99-udisks.rules
-#
-#polkit.addRule(function(action, subject) {
-#    if ((action.id == "org.freedesktop.udisks2.filesystem-mount" ||
-#         action.id == "org.freedesktop.udisks2.filesystem-unmount-others") &&
-#        subject.isInGroup("users")) {
-#        return polkit.Result.YES;
-#    }
-#});
-#
+# using lxqt-policykit-agent for sudo authentication
 
 action="$1"
 if [[ "$action" != "mount" && "$action" != "unmount" ]]; then
