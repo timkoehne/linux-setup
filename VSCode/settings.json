@@ -9,4 +9,8 @@
         "<C-f>": false
     },
     "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "window.confirmSaveUntitledWorkspace": false,
+    "python.createEnvironment.trigger": "off",
+    "diffEditor.ignoreTrimWhitespace": false,
 }
