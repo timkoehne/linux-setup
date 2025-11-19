@@ -103,3 +103,6 @@ ex () {
 tmux ls
 source /opt/miniconda3/etc/profile.d/conda.sh
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+
+# uv
+export PATH="/home/tim/.local/bin:$PATH"
