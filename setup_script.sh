@@ -1,3 +1,6 @@
+
+git submodule update --init --recursive
+
 ln -f -s ~/Dropbox/Scripts/linux-setup/.bashrc ~/.bashrc
 ln -f -s ~/Dropbox/Scripts/linux-setup/.profile ~/.profile
 
