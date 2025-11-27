@@ -5,6 +5,9 @@ folder_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 # download submodule folder
 git -C "$folder_path" submodule update --init --recursive
 
+# set mimeapps
+ln -f -s "$folder_path/mimeapps.list" ~/.config/mimeapps.list
+
 # softlink dotfiles
 ln -f -s "$folder_path/.bashrc" ~/.bashrc
 ln -f -s "$folder_path/.profile" ~/.profile
@@ -14,7 +17,9 @@ mkdir -p ~/.config/dunst
 ln -f -s "$folder_path/dunst/dunstrc" ~/.config/dunst/dunstrc
 
 mkdir -p ~/.config/waybar
-ln -f -s "$folder_path/waybar" ~/.config/waybar
+ln -f -s "$folder_path/waybar/config.jsonc" ~/.config/waybar/config.jsonc
+ln -f -s "$folder_path/waybar/modules.jsonc" ~/.config/waybar/modules.jsonc
+ln -f -s "$folder_path/waybar/style.css" ~/.config/waybar/style.css
 
 mkdir -p ~/.config/hypr
 ln -f -s "$folder_path/hypr/hyprland.conf" ~/.config/hypr/hyprland.conf
