@@ -106,3 +106,6 @@ export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
 
 # uv
 export PATH="/home/tim/.local/bin:$PATH"
+
+# QT platform for opencv2
+export QT_QPA_PLATFORM=xcb
