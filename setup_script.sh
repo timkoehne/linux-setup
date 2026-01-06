@@ -35,3 +35,6 @@ ln -f -s "$folder_path/VSCode/keybindings.json" ~/.config/Code/User/keybindings.
 
 mkdir -p ~/.config/discord
 ln -f -s "$folder_path/Discord/settings.json" ~/.config/discord/settings.json
+
+mkdir -p ~/.config/yt-dlp
+ln -f -s "$folder_path/yt-dlp/config" ~/.config/yt-dlp/config

@@ -1,0 +1,23 @@
+# ===== General =====
+-i
+-c
+--add-metadata
+--embed-metadata
+
+# ===== Format selection =====
+# Best video up to 1080p + best audio
+-f "bv*[height<=1080]/bv*+ba/b[height<=1080]/b"
+
+# Prefer efficient codecs when available
+--merge-output-format mkv
+
+# ===== Post-processing =====
+# Ensure final container is MKV
+--remux-video mkv
+
+# ===== Metadata niceties =====
+--parse-metadata "%(uploader)s:%(artist)s"
+--parse-metadata "%(title)s:%(track)s"
+
+# ===== Safety =====
+--no-mtime
