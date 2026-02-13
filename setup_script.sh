@@ -38,3 +38,6 @@ ln -f -s "$folder_path/Discord/settings.json" ~/.config/discord/settings.json
 
 mkdir -p ~/.config/yt-dlp
 ln -f -s "$folder_path/yt-dlp/config" ~/.config/yt-dlp/config
+
+mkdir -p ~/.config/xfce4
+ln -f -s "$folder_path/xfce4/helpers.rc" ~/.config/xfce4/helpers.rc
