@@ -31,7 +31,7 @@ button:hover {
     color: #2c3e50;
 }
 
-#workspaces button.visible{
+#workspaces button.visible {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -50,6 +50,7 @@ button:hover {
 #scratchpad,
 #clock,
 #custom-pacman,
+#custom-tailscale,
 #keyboard-state,
 #tray,
 #battery,
@@ -78,20 +79,39 @@ button:hover {
     color: rgb(255, 0, 0);
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #e74c3c;
 }
 
 
-.modules-left > widget:first-child > #workspaces {
-    margin-right: 10px; /* Space between workspaces and other modules */
+.modules-left>widget:first-child>#workspaces {
+    margin-right: 10px;
+    /* Space between workspaces and other modules */
 }
 
-.modules-right > widget:last-child > #workspaces {
-    margin-left: 10px; /* Space between workspaces and other modules */
+.modules-right>widget:last-child>#workspaces {
+    margin-left: 10px;
+    /* Space between workspaces and other modules */
+}
+
+#custom-tailscale.connected {
+    color: #2ecc71;
+}
+
+#custom-tailscale.connected-exit {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+#custom-tailscale.hidden {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
 }

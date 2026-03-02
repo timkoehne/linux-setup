@@ -14,17 +14,18 @@
         "hyprland/window"
     ],
     "modules-right": [
-	"idle_inhibitor",
-    	"pulseaudio",
-    	"custom/pacman", 
-    	"network", 
-    	"cpu", 
-    	"memory", 
-    	"temperature", 
-	"backlight",
-	"battery",
-    	"clock", 
-    	"tray"
+        "custom/tailscale",
+        "idle_inhibitor",
+        "pulseaudio",
+        "custom/pacman",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "backlight",
+        "battery",
+        "clock",
+        "tray"
     ],
 
     "include": "~/.config/waybar/modules.jsonc"

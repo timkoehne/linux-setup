@@ -8,7 +8,7 @@
         "format": "{name}"
     },
     "tray": {
-	"spacing": 10
+        "spacing": 10
     },
     "clock": {
         "format": "{:%Y-%m-%d  %H:%M:%S}",
@@ -51,10 +51,9 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-	"on-click-middle": "",
-	"on-scroll-up": "exec ~/Dropbox/Scripts/linux-setup/set_volume.sh 1%+",
-	"on-scroll-down": "exec ~/Dropbox/Scripts/linux-setup/set_volume.sh 1%-"
-
+        "on-click-middle": "",
+        "on-scroll-up": "exec ~/Dropbox/Scripts/linux-setup/set_volume.sh 1%+",
+        "on-scroll-down": "exec ~/Dropbox/Scripts/linux-setup/set_volume.sh 1%-"
     },
     "custom/pacman": {
         "class": "custom-pacman",
@@ -63,16 +62,15 @@
         "return-type": "json",
         "format": "{}",
         "tooltip": true,
-	"on-click": "pamac-manager"
-
+        "on-click": "pamac-manager"
     },
     "idle_inhibitor": {
-	"start-activated": true,
+        "start-activated": true,
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
-    	}
+        }
     },
     "battery": {
         "bat": "BAT0",
@@ -85,10 +83,18 @@
         "format-icons": ["", "", "", "", ""]
     },
     "backlight": {
-    	"device": "intel_backlight",
-	"format": "{percent}% {icon}",
-	"format-icons": ["", "", "", ""],
-	"on-scroll-up": "exec ~/Dropbox/Scripts/linux-setup/set_brightness.sh 1%+",
-	"on-scroll-down": "exec ~/Dropbox/Scripts/linux-setup/set_brightness.sh 1%-"
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", ""],
+        "on-scroll-up": "exec ~/Dropbox/Scripts/linux-setup/set_brightness.sh 1%+",
+        "on-scroll-down": "exec ~/Dropbox/Scripts/linux-setup/set_brightness.sh 1%-"
+    },
+    "custom/tailscale": {
+        "exec": "~/Dropbox/Scripts/linux-setup/waybar-tailscale.sh",
+        "interval": 2,
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "on-click": "~/Dropbox/Scripts/linux-setup/rofi-tailscale.sh"
     }
 }
