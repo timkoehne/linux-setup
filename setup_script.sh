@@ -23,11 +23,14 @@ ln -f -s "$folder_path/waybar/style.css" ~/.config/waybar/style.css
 
 mkdir -p ~/.config/hypr
 ln -f -s "$folder_path/hypr/hyprland.conf" ~/.config/hypr/hyprland.conf
+ln -f -s "$folder_path/hypr/hyprland.lua" ~/.config/hypr/hyprland.lua
 ln -f -s "$folder_path/hypr/hypridle.conf" ~/.config/hypr/hypridle.conf
 ln -f -s "$folder_path/hypr/hyprlock.conf" ~/.config/hypr/hyprlock.conf
-echo "env = LINUX_SETUP,$folder_path" > ~/.config/hypr/envvars
+echo "env = LINUX_SETUP,$folder_path" >~/.config/hypr/envvars
 touch ~/.config/hypr/monitors.conf
 touch ~/.config/hypr/workspaces.conf
+touch ~/.config/hypr/monitors.lua
+touch ~/.config/hypr/workspaces.lua
 
 mkdir -p ~/.config/Code/User
 ln -f -s "$folder_path/VSCode/settings.json" ~/.config/Code/User/settings.json
