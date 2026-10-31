@@ -22,7 +22,7 @@ alias yta='yt-dlp -x --yes-playlist \
   --embed-thumbnail \
   --audio-format mp3 \
   -o "~/Music/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-alias ytp='yt-dlp -r 15M --write-thumbnail --yes-playlist \
+alias ytp='yt-dlp -r 5M -t sleep --write-thumbnail --yes-playlist \
   -o "~/Videos/%(playlist)s/%(playlist_index)02d - %(title)s.%(ext)s"'
 
 # Usage: concatVideos video_file1 video_file2
