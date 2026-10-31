@@ -72,6 +72,14 @@
             "deactivated": ""
         }
     },
+    "custom/mousebattery": {
+        // Logitech wireless mouse (HID++). Collapses when the mouse is off.
+        "exec": "~/Dropbox/Scripts/linux-setup/waybar-mousebattery.sh",
+        "interval": 60,
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true
+    },
     "battery": {
         "bat": "BAT0",
         "interval": 60,

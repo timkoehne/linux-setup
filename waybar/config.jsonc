@@ -23,6 +23,7 @@
         "memory",
         "temperature",
         "backlight",
+        "custom/mousebattery",
         "battery",
         "clock",
         "tray"
