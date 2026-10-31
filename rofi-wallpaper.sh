@@ -1,34 +1,35 @@
 #!/bin/bash
 
-WALLPAPER_DIRECTORY=~/Pictures/Wallpapers/
-ROFI_THEME=~/Dropbox/Scripts/rofi-themes/solarized-image.rasi
-THUMBNAIL_DIR=/tmp/Wallpapers_Thumbnails
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+ROFI_THEME="$HOME/Dropbox/Scripts/rofi-themes/solarized-image.rasi"
+THUMBNAIL_DIR="/tmp/Wallpapers_Thumbnails"
+HYPRPAPER_CONF="$HOME/.config/hypr/hyprpaper.conf"
 
 mkdir -p "$THUMBNAIL_DIR"
 
-FILE=$(find "$WALLPAPER_DIRECTORY" -type f | while read -r WALLPAPER; do
-    THUMBNAIL="$THUMBNAIL_DIR/$(basename "$WALLPAPER").png"
-    
-    if [[ ! -f "$THUMBNAIL" ]]; then
-        magick "$WALLPAPER" -resize 50x50 "$THUMBNAIL"
-    fi
-    
-    echo -en "$(basename "$WALLPAPER")\0icon\x1fthumbnail://$THUMBNAIL\n"
-done | rofi -i -p "Choose Wallpaper" -dmenu -show-icons -theme "$ROFI_THEME")
-
-if [ -z "$FILE" ]; then
-    echo "No wallpaper selected, exiting."
-    exit 1
+if ! pgrep -x "hyprpaper" > /dev/null; then
+    hyprpaper &
+    sleep 1
 fi
 
-SELECTED_WALLPAPER="$WALLPAPER_DIRECTORY$FILE"
+FILE=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | \
+    while read -r wallpaper; do
+        filename=$(basename "$wallpaper")
+        thumbnail="$THUMBNAIL_DIR/$filename.png"
+        [[ ! -f "$thumbnail" ]] && magick "$wallpaper" -resize 100x100 "$thumbnail"
+        echo -en "$filename\0icon\x1f$thumbnail\n"
+    done | rofi -i -p "Choose Wallpaper" -dmenu -show-icons -theme "$ROFI_THEME")
 
-hyprctl hyprpaper preload "$SELECTED_WALLPAPER"
-hyprctl hyprpaper wallpaper ,"$SELECTED_WALLPAPER"
+[[ -z "$FILE" ]] && exit 0
 
-sleep 1
+SELECTED="$WALLPAPER_DIR/$FILE"
 
-hyprctl hyprpaper unload unused
+{
+    echo "splash = false"
+    echo "wallpaper {"
+    echo "  monitor = "
+    echo "  path = $SELECTED"
+    echo "}"
+} > "$HYPRPAPER_CONF"
 
-echo -e "preload = $SELECTED_WALLPAPER\nwallpaper = ,$SELECTED_WALLPAPER" > ~/.config/hypr/hyprpaper.conf
-
+hyprctl hyprpaper wallpaper ",$SELECTED,cover"
